@@ -8,12 +8,14 @@ class SearchBar extends Component {
     super(props);
 
     // only set a object inside constructor, in other places we only use this.setState({...}) to update our state object
-    this.state = { term: ''};
+    this.state = { term: 'hello'};
   }
   render() {
     return (
       <div>
-        <input onChange={event => this.setState({term: event.target.value})} />
+        <input
+          value={this.state.term}
+          onChange={event => this.setState({term: event.target.value})} />
         <p>Value of the input is: {this.state.term}</p>
       </div>
     )
