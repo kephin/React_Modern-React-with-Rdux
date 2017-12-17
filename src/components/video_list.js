@@ -5,7 +5,10 @@ import VideoListItem from './video_list_item';
 const VideoList = (props) => {
   const videoItems = props.videos.map(video => (
     // Remember to add unique 'key' props when rendering an array or iterator
-    <VideoListItem key={video.etag} video={video}/>
+    <VideoListItem
+      onVideoSelect={props.onVideoSelect}
+      key={video.etag}
+      video={video} />
   ));
   return (
     // using 'className' in order to prevent naming conflict with JavaScript reserved keyword: 'class'
